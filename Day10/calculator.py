@@ -1,3 +1,4 @@
+from calculator_art import logo
 def add(n1, n2):
     """ This function add 2 numbers."""
     return n1 + n2
@@ -21,7 +22,8 @@ operations = {'+': add,
               }
 
 def calculation():
-    num1 = int(input('Whats the first number : '))
+    print(logo)
+    num1 = float(input('Whats the first number : '))
 
     for symbol in operations:
         print(symbol)
@@ -30,7 +32,7 @@ def calculation():
     while end_of_calculation:    
         operation_symbol = input('Pick an operation : ')
 
-        num2 = int(input('Whats the nest number? : '))
+        num2 = float(input('Whats the nest number? : '))
 
         calculate_function = operations[operation_symbol]
         answer = calculate_function(num1, num2)
