@@ -19,26 +19,33 @@ operations = {'+': add,
               '*': multiple,
               '/': divide
               }
-num1 = int(input('Whats the first number : '))
 
-for symbol in operations:
-    print(symbol)
-    
-operation_symbol = input('Pick an operation from the line above: ')
+def calculation():
+    num1 = int(input('Whats the first number : '))
 
-num2 = int(input('Whats the second number : '))
+    for symbol in operations:
+        print(symbol)
+        
+    end_of_calculation = True    
+    while end_of_calculation:    
+        operation_symbol = input('Pick an operation : ')
 
-calculate_function = operations[operation_symbol]
-first_answer = calculate_function(num1, num2)
+        num2 = int(input('Whats the nest number? : '))
 
-print(f"{num1} {operation_symbol} {num2} = {first_answer}")
+        calculate_function = operations[operation_symbol]
+        answer = calculate_function(num1, num2)
 
-operation_symbol = input('Pich another operation: ')
-
-num3 = int(input('What is the next number?: '))
-
-calculate_function = operations[operation_symbol]
-second_ansdwer = calculate_function(first_answer, num3)
-
-print(f"{first_answer} {operation_symbol} {num3} = {second_ansdwer}")
+        print(f"{num1} {operation_symbol} {num2} = {answer}")
+        
+        user_answer = input(f'Type y to continue calculation with {answer}, or type n to start a new calculation.: ').lower()
+        if user_answer == 'y':
+            num1 = answer
+        else:
+            end_of_calculation = False
+            print(f"The final answer is: {answer}")
+            print('Goood CAlculation.')
+            calculation()
+            
+calculation()
+            
  
