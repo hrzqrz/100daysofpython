@@ -1,0 +1,12 @@
+1. Describe the problem
+2. Reproduce the bug
+3. play computer 
+4. fix errors
+5. print is your friend 
+6. use a debugger
+7. take a break
+8. ask a friend
+9. run often
+10. ask stackoverflow
+
+everyone gets bugs. 
